@@ -10,6 +10,14 @@ var PORT = 3000;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+var tables = [{
+routeName: "yohan",
+name: "Yohan Bregortovitch",
+phone:15089747723,
+email:"IamAPir@te@yahoo.com",
+uniqueId:"The Butxxher"
+}]
+
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "home.html"));
 });
@@ -18,7 +26,7 @@ app.get("/reservations", function(req, res) {
   res.sendFile(path.join(__dirname, "reservations.html"));
 });
 app.get("/tables", function(req, res){
-  res.sendFile(path.join(__dirname, "/tables.html"));
+  res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 // Displays all characters
