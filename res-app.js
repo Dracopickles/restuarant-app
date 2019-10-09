@@ -15,7 +15,15 @@ routeName: "yohan",
 name: "Yohan Bregortovitch",
 phone:15089747723,
 email:"IamAPir@te@yahoo.com",
-uniqueId:"The Butxxher"
+uniqueId:"The Butxxxher"
+}]
+
+var waitList = [{
+routeName: "jackie",
+name: "Jackie 'The Man' Chan",
+phone:19094206969,
+email:"floppyDoop@poop.com",
+uniqueId:"AssMaster4000"
 }]
 
 app.get("/", function(req, res) {
@@ -48,6 +56,23 @@ app.get("/api/tables/:table", function(req, res) {
   }
 
   return res.json(false);
+});
+
+// Create New Characters - takes in JSON input
+app.post("/api/tables", function(req, res) {
+  // req.body hosts is equal to the JSON post sent from the user
+  // This works because of our body parsing middleware
+  var newTable = req.body;
+
+  // Using a RegEx Pattern to remove spaces from newCharacter
+  // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+  newTable.routeName = newTable.name.replace(/\s+/g, "").toLowerCase();
+
+  console.log(newTable);
+
+  tables.push(newTable);
+
+  res.json(newTable);
 });
 
 // Displays all characters
