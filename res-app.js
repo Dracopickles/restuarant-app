@@ -42,7 +42,7 @@ app.get("/api/tables", function(req, res) {
 });
 
 app.get("/api/waitList", function(req, res){
-  return res.json(tables);
+  return res.json(waitList);
 });
 
 console.log(tables);
