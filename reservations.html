@@ -21,8 +21,8 @@
 			<br>
 
 			<div class="text-center">
-				<a href="tables.html"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
-				<a href="home.html"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
+				<a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+				<a href="/home"><button type="button" class="btn btn-lg btn-default"><span class="glyphicon glyphicon-home"></span></button></a>
 			</div>
 		</div>
 
@@ -84,7 +84,7 @@
     $("#submit-btn").on("click", function(event) {
       event.preventDefault();
       var newReservation = {
-        name: $("#name").val().trim(),
+        name: $("#reserve_name").val().trim(),
         phone: $("#reserve_phone").val().trim(),
         email: $("#reserve_email").val().trim(),
         uniqueID: $("#reserve_uniqueID").val().trim()
