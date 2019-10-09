@@ -29,6 +29,27 @@ app.get("/tables", function(req, res){
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+app.get("/api/tables", function(req, res) {
+  return res.json(tables);
+});
+
+console.log(tables);
+
+// Displays a single character, or returns false
+app.get("/api/tables/:table", function(req, res) {
+  var chosen = req.params.table;
+
+  console.log(chosen);
+
+  for (var i = 0; i < tables.length; i++) {
+    if (chosen === tables[i].routeName) {
+      return res.json(tables[i]);
+    }
+  }
+
+  return res.json(false);
+});
+
 // Displays all characters
 // app.get("/api/characters", function(req, res) {
 //   return res.json(characters);
