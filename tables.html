@@ -26,9 +26,9 @@
       <br>
 
       <div class="text-center">
-        <a href="reservations.html"><button type="button" class="btn btn-lg btn-danger"><span
+        <a href="/reservations"><button type="button" class="btn btn-lg btn-danger"><span
               class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
-        <a href="home.html"><button type="button" class="btn btn-lg btn-default"><span
+        <a href="/"><button type="button" class="btn btn-lg btn-default"><span
               class="glyphicon glyphicon-home"></span></button></a>
       </div>
     </div>
@@ -70,13 +70,19 @@
 
       <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
       <script type="text/javascript">
-function runTable(){
-  let currentURL = window.location.origin;
-  $.ajax({url: currentURL + "/api/tables", method: "GET"})
-    .done(function(tableData) {
-      
-    })
-}
+        function runTable() {
+          let currentURL = window.location.origin;
+          $.ajax({ url: currentURL + "/api/tables", method: "GET" })
+            .done(function (tableData) {
+
+              for (let i = 0; i < tableData.length; i++) {
+                let tableSection = $("<div>");
+                tableSection.addClass('well');
+                tableSection.attr('well');
+
+              }
+            })
+        }
 
 
 
