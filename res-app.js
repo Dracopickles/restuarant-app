@@ -20,7 +20,7 @@ uniqueId:"The Butxxxher"
 
 var waitList = [{
 routeName: "jackie",
-name: "Jackie 'The Man' Chan",
+name: "Jackie The Man Chan",
 phone:19094206969,
 email:"floppyDoop@poop.com",
 uniqueId:"AssMaster4000"
@@ -42,6 +42,7 @@ app.get("/api/tables", function(req, res) {
 });
 
 console.log(tables);
+console.log(waitList);
 
 // Displays a single character, or returns false
 app.get("/api/tables/:table", function(req, res) {
